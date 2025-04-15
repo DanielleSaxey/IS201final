@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>FRUT4Life!</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <link href="css/styles.css"rel="stylesheet" />
+        <link href="css/frutstyles.css"/>
+    </head>
+<body class="back">
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">FRÜT Leather Co.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About the Founder</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="scratch.html">FRUT4Life</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead" style="background-image: url('https://howdyhealth.tamu.edu/wp-content/uploads/2023/12/5-ways-to-include-more-fruit-in-your-diet.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="page-heading">
+                        <h1>FRUT is Essential for Life!</h1>
+                        <span class="subheading">Why do you need fruit every day?</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <h1 class="frut" style="text-align: center;">Everyone everywhere should be eating fruit everyday. Why?</h1>
+    <div  style="text-align: center; margin: 20px 0;">
+        <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/kteZneJm1EI?si=pjHn4f_2KppNFQsi" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
+    <div class='tableauPlaceholder' id='viz1744602061899' style='position: relative'>
+        <noscript>
+          <a href='#'>
+            <img alt='Dashboard 1 (2)' 
+                 src='https://public.tableau.com/static/images/He/HealthiestFruits2/Dashboard12/1_rss.png' 
+                 style='border: none' />
+          </a>
+        </noscript>
+        <object class='tableauViz' style='display:none;'>
+          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+          <param name='embed_code_version' value='3' />
+          <param name='site_root' value='' />
+          <param name='name' value='HealthiestFruits2/Dashboard12' />
+          <param name='tabs' value='no' />
+          <param name='toolbar' value='yes' />
+          <param name='static_image' value='https://public.tableau.com/static/images/He/HealthiestFruits2/Dashboard12/1.png' />
+          <param name='animate_transition' value='yes' />
+          <param name='display_static_image' value='yes' />
+          <param name='display_spinner' value='yes' />
+          <param name='display_overlay' value='yes' />
+          <param name='display_count' value='yes' />
+          <param name='language' value='en-US' />
+        </object>
+    </div>
+    
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1744602061899');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.minWidth='420px';
+            vizElement.style.maxWidth='1550px';
+            vizElement.style.width='100%';
+            vizElement.style.minHeight='587px';
+            vizElement.style.maxHeight='1087px';
+            vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+
+    <h2 class="frut">Guess What Fruit I'm Thinking Of! 🍓</h2>
+    <p class="frut">Type your guess and click the button.</p>
+
+    <input type="text" id="fruit-input" placeholder="Your guess here..." />
+    <button onclick="checkGuess()">Guess</button>
+
+    <p id="result"></p>
+
+    <script>
+    const fruits = [
+        "apple", "banana", "cherry", "mango", "pineapple", "kiwi",
+        "orange", "strawberry", "grape", "watermelon", "papaya", "peach", "pear"
+    ];
+
+    let secretFruit = pickRandomFruit();
+
+    function pickRandomFruit() {
+        return fruits[Math.floor(Math.random() * fruits.length)];
+    }
+
+    function checkGuess() {
+        const userInput = document.getElementById("fruit-input").value.trim().toLowerCase();
+        const result = document.getElementById("result");
+
+        if (!userInput) {
+        result.textContent = "Please enter a guess!";
+        return;
+        }
+
+        if (userInput === secretFruit) {
+        result.textContent = `🎉 You got it! I was thinking of "${secretFruit}". Want to play again?`;
+        secretFruit = pickRandomFruit(); // Start a new round
+        } else if (userInput === 'easteregg') {
+        result.textContent = `(... I was thinking of "${secretFruit}")`;
+        } else if (fruits.includes(userInput)) {
+        result.textContent = `❌ Nope, not ${userInput}. Try again!`;
+        } else {
+        result.textContent = `🤔 Hmm... I don't think "${userInput}" is in my fruit list.`;
+        }
+
+        document.getElementById("fruit-input").value = "";
+    }
+    </script>
+
+    <div class="fun-fact" id="fact-container">
+        <!-- The fruit fact will appear here -->
+    </div>
+
+    <button onclick="showRandomFact()">Get a New Fruit Fact</button>
+
+    <script>
+        const fruitFacts = [
+            "Bananas are technically berries, but strawberries aren't! 🍌🍓",
+            "Apples float in water because 25% of their volume is air. 🍎",
+            "A pineapple is actually a group of berries fused together. 🍍",
+            "Kiwis contain more vitamin C than oranges. 🥝",
+            "Tomatoes are fruits, and so are cucumbers! 🍅🥒",
+            "There are over 1,000 varieties of bananas worldwide. 🍌",
+            "Watermelons are 92% water. 💧🍉",
+            "Bananas glow blue under black lights! 🍌✨",
+            "The world’s most expensive fruit is a Yubari melon from Japan — it sold for over $27,000! 💸🍈",
+            "Apples are part of the rose family, just like pears and cherries. 🌹🍎",
+            "There are over 7,500 different types of apples around the world. 🍏🌍",
+            "Strawberries are the only fruit with seeds on the outside. 🍓",
+            "Oranges aren't always orange — in warmer climates, they can stay green on the outside. 🍊🌿",
+            "Pineapples take about 2 years to grow one fruit! 😲🍍",
+            "Watermelons were placed in the tombs of Egyptian kings to nourish them in the afterlife. 🏺🍉",
+            "The durian is known as the 'king of fruits' — and it smells... very strong. 👑😬",
+            "A single pomegranate can contain over 1,000 seeds! ❤️🍎",
+            "Figs are pollinated by tiny wasps that live inside them. 😮🐝",
+            "Cranberries can bounce — that's how farmers check if they’re ripe! 🍒🧃",
+            "Papayas contain enzymes that can tenderize meat. 🍖🥭",
+            "Grapes explode when you microwave them (seriously, don’t try it). 💥🍇",
+            "Avocados are technically berries, and they ripen after picking. 🥑📦"
+        ];
+
+        function showRandomFact() {
+            const factContainer = document.getElementById("fact-container");
+            const factIndex = Math.floor(Math.random() * fruitFacts.length);
+            factContainer.textContent = fruitFacts[factIndex];
+        }
+
+        // Show one fact on initial load
+        showRandomFact();
+    </script> <br><br>
+   
+   <a href="#top" class="top">Top</a>
+</body>
+</html>
